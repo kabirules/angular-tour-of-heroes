@@ -8,6 +8,7 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesComponent }     from './heroes.component';
 import { HeroService }         from './hero.service';
 import { DashboardComponent }  from './dashboard.component';
+import { AppRoutingModule }    from './app-routing.module';
 
 
 
@@ -15,25 +16,7 @@ import { DashboardComponent }  from './dashboard.component';
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-        path: 'detail/:id',
-        component: HeroDetailComponent
-      },
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: 'heroes',
-        component: HeroesComponent
-      }
-    ])
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
@@ -41,9 +24,7 @@ import { DashboardComponent }  from './dashboard.component';
     HeroesComponent,
     DashboardComponent
   ],
-  providers: [
-    HeroService
-  ],
+  providers: [HeroService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
