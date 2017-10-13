@@ -7,7 +7,7 @@ import { AppComponent }        from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesComponent }     from './heroes.component';
 import { HeroService }         from './hero.service';
-import { DashboardComponent }         from './dashboard.component';
+import { DashboardComponent }  from './dashboard.component';
 
 
 
@@ -16,6 +16,10 @@ import { DashboardComponent }         from './dashboard.component';
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
+      {
+        path: 'detail/:id',
+        component: HeroDetailComponent
+      },
       {
         path: '',
         redirectTo: '/dashboard',
